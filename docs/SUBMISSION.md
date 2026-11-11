@@ -30,7 +30,7 @@ The machine history also contains goal-control pause/automatic continuation mess
 
 ## History and verification
 
-Keep both original Codex conversations and their subagents until judging ends. Public human-readable exports must be reviewed for secrets and third-party personal information; clearly mark any redaction. A final export can only include the final answer after the turn is finished: use the client's full-thread export/share after delivery, then attach it here or in Discord. Do not substitute a highlights-only log for the required full history. This file is a submission draft until that export and the verification checklist are complete.
+Keep all three original Codex parent conversations and their subagents until judging ends. Public human-readable exports must be reviewed for secrets and third-party personal information; clearly mark any redaction. A final export can only include the final answer after the turn is finished: use the client's full-thread export/share after delivery, then attach it here or in Discord. Do not substitute a highlights-only log for the required full history. This file is a submission draft until that export and the verification checklist are complete.
 
 ## Required delivery evidence
 

@@ -273,6 +273,36 @@ Anche `https://hushwood.akkaz.dev` funziona: reindirizza a Sites mantenendo perc
 Resta un blocco concreto: Chrome non è raggiungibile, quindi non posso certificare la prova visiva, il microfono e il flusso autenticato dal browser. Sto salvando il resoconto con questo limite e ripulendo i processi e i file temporanei.
 
 
+### assistant
+
+Ho scelto **Sites + database D1 gestito** e pubblicato Hushwood:
+
+- [Gioco e piattaforma](https://hushwood.akkaz.dev)
+- [Codice open source](https://github.com/akkaz/hushwood)
+- [Video teaser](https://hushwood.akkaz.chatgpt.site/media/hushwood-teaser.mp4)
+
+Implementati sei lingue, mascotte, progressi, classi, inviti e coppa scolastica. **32 test passati**, revisione Astra conclusa, temporanei ripuliti.
+
+La consegna resta aperta: Chrome è irraggiungibile, quindi manca il collaudo browser con microfono e login. Serve inoltre l’esportazione integrale finale della cronologia per l’hackathon. [Resoconto e limiti](https://github.com/akkaz/hushwood/blob/main/docs/DELIVERY.md).
+
+<oai-mem-citation>
+<citation_entries>
+MEMORY.md:855-859|note=[Contesto del precedente progetto didattico e separazione della demo pubblica]
+</citation_entries>
+<rollout_ids>
+01a181e7-84b2-7290-8804-786234da88a8
+</rollout_ids>
+</oai-mem-citation>
+
+### user
+
+[Automatic goal continuation supplied by the client; not a manually entered new prompt.]
+
+### assistant
+
+Riprovo il collegamento a Chrome e controllo la cronologia esportata, ora che comprende anche il resoconto del turno precedente.
+
+
 ## Conversation rollout-2026-11-11T11-17-12-01a1ca1c-913b-73b1-8d34-717adb40663e
 
 ### user
