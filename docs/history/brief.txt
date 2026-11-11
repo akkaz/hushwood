@@ -1,0 +1,99 @@
+🔟 TEN PROMPT BUILD
+🟢 Starts: now
+⏰ Deadline: lunedì 23 novembre 2026 alle ore 08:59
+
+Build something useful with Codex in 10 prompts or less, then show us how you spent them.
+
+💡 The short version
+Your ten cover the whole project across Codex and ChatGPT, from planning to debugging
+Follow-ups, "continue", "fix this" and retries all count, and a new chat doesn't reset your count
+Setup and config by hand is fine, writing features or fixing code by hand isn't
+Start a new project during the event, one entry per person
+
+📥 How to enter
+Reply in the thread below with your repo or demo, a short description, how you spent your ten, and your build history.
+Full rules and how to save your history are in the thread
+
+⚖️ How we judge
+How useful it is
+How well you used your ten
+How clear your writeup is
+
+🏆 Prizes
+🥇 1st: $500
+🥈 2nd: $250
+🥉 3rd: $150
+Winners choose OpenAI API credits or Codex credits.
+
+There's no prize for finishing fastest. It's all about the quality of what you build, so take your time and spend your ten wisely! :)
+@Dev Challenges @Builder
+Immagine
+[10:14]Smile:
+📜 Full rules
+💬 What counts as a prompt
+Your ten cover the whole project across Codex and ChatGPT: planning, building and debugging.
+Follow-ups, "continue", "fix this", answers to the agent's questions, manually requested retries and edited-and-resubmitted prompts all count. Starting a new chat doesn't reset your count. Include unsuccessful attempts too.
+Codex's automatic tool use, built-in subagent work, automatic connection retries, plain permission approvals, and exporting or sharing your session don't count. Any extra direction you send still counts.
+Specs, attachments or instruction files you use to direct the build are part of the prompt you use them in, so include them. Don't add unrecorded instructions through files between prompts.
+Brainstorming ideas or having ChatGPT write your prompts counts too. Thinking, sketching or writing prompts yourself is free.
+
+🛠️ Manual changes
+Setup, config values, credentials and small wording edits are fine, just disclose the changes, not the secrets. Writing features or fixing application code by hand isn't.
+
+📜 Rules
+Start a new project during the event. Standard libraries and starter templates are fine, but disclose what you started with. No older projects or pre-built features presented as event work.
+Use only Codex and ChatGPT for AI assistance when planning, building or debugging your entry.
+One entry per person.
+Don't commit API keys, tokens, secrets or .env files. Remove sensitive or personal info before sharing and clearly mark redactions.
+Keep your original sessions and submitted source version until judging is complete. Finalists may be asked to show both privately. Entries we can't verify aren't eligible for prizes.
+By entering, you agree that we may feature your project name, description and submitted demo/images in the event showcase and Spotlight. Private verification material won't be published.
+
+[10:14]Smile:
+📥 What to submit
+Reply in this thread before the deadline with:
+Public GitHub repo, or a demo link / video
+Short description: what you built and who it's for
+How I spent my ten: every prompt copy-pasted in order, including any supporting instructions, with a one-line note on what each did
+Build notes: client/models used, any starting template, custom instructions or skills, and manual changes
+Build history for every conversation used on the project (see below)
+
+🗂️ How to save your build history
+Codex CLI: run /export session.md after the final turn finishes (how to)
+ChatGPT chats: a share link to the full conversation, not just one response
+Codex in the ChatGPT desktop app (macOS): a shared snapshot of the completed thread (how to). Use a personal account, workspace links only open for your workspace
+Sharing/export unavailable: readable screenshots in order, or a screen recording of the full conversation
+
+Include all prompts and responses, not just highlights. Longer logs can go in your repo or a linked doc. Check how you'll save your history before you start, and make sure we can open it.
+
+Oggi parteciperemo a questo hackaton:
+
+
+
+-------------------------------
+
+La mia idea è di fare un mini-gioco opensource pensato per le scuole. La piattaforma è composta da:
+
+1. frontend pubblico, utilizzabile da chiunque anche senza login
+2. iscrizione che permette la registrazione delle proprie classi o dell'intera scuola (funzionalità di coppa delle scuole)
+
+-------------------------------
+
+L'idea è quella di usare il microfono del computer per realizzare una mini web app da tenere accesa durante le lezioni scolastiche da parte dei professori e proiettata sulla lim. L'app contiene un simpatico avatar / mascotte configurabile (con un bel po di preset gia generati e pronti da usare) e che cambia di umore in base a quanto casino c'è in classe.
+
+Attorno a questa idea di base ci sono stimoli, ricompense e punizioni per la classe. Stare sotto la soglia del silenzio per guadagnare exp e salire di livello, stare molto di fila in silenzio aumenta la tua streak, l'avatar si può evolvere salendo di livello e nche guadagnare ricompense migliori a mo di GDR. Impostando piu di una classe nella stessa scuola è possibile poi creare una coppa della scuola, con ulteriori premi e ricompense configurabili, la possibilità di vedere le altre classi da una dashboard per docenti e cosi via. Anche un login con mail associate alla scuola per permettere agli altri professori di "giocare" nella scuola che si è creato.
+
+------------------------------
+
+Serve quindi anche una landing per il progetto opensource, che contiene la versione del gioco minimal senza la coppa, senza il salvataggio dell'exp sul db e cosi via. per il resto invece serve anche un db (userai mongo db atlas tramite l'mcp) e poi puoi deployare su vercel sempre con vercel cli associando il mio dominio akkaz.dev.
+
+Conto di fare l'hackaton in 1 prompt e che quindi mi consegni tutto il lavoro gia finito, quanto meno per le parti che ti ho detto di fare. considera che ogni prompt conta quindi mi serve che usi dei subagenti e che rispondi TU alle loro domande eventualmente, io non farò piu alcun prompt.
+
+Inoltre c'è gia un progetto open (sempure una mia idea da cui volevo partire), ma possiamo sia cambiare ambientazione che farlo mooolto meglio, per esempio li manca completamente la parte di coppa delle scuole, la registrazioone insomma quel che manca per renderlo un vero saas vendibile ad una scuola. La lingua dovrà essere inglese per il gioco, ma configurabile in almeno le principali lingue europee (già pronte all'uso).
+
+REQUISITI EXTRA:
+- demo sulla landing
+- video teaser da postare sui social
+- revisione finale da un agente con astra che proponga miglioramti e l'orchestratore sceglie quali implementare
+- test su chrome una votla deployato
+
+Essere pronti a pubblicare l'hackaton sul server discord.

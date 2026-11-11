@@ -1,0 +1,78 @@
+# AGENTS.md instructions
+
+<INSTRUCTIONS>
+# Istruzioni globali utente
+
+  ## Comandi che richiedono privilegi root
+
+  Per qualsiasi comando che richiede `sudo`, usa SEMPRE la forma `sudo -A <comando>`.
+
+  - È configurato `SUDO_ASKPASS` che punta a `~/.local/bin/zenity-askpass`
+    (script con `zenity --password`): comparirà un popup grafico che chiederà
+    la password all'utente.
+  - Non tentare mai `sudo` interattivo senza `-A` (bloccherebbe la shell in
+    attesa di input dal TTY).
+  - Non usare mai workaround tipo `echo password | sudo -S`, `sudo -n`,
+    modifiche a `/etc/sudoers`, NOPASSWD, o altri tentativi di bypassare
+    l'autenticazione.
+  - Se `sudo -A` fallisce (es. sessione SSH senza display grafico),
+    fermati e segnala il problema all'utente — non cercare alternative
+    non sicure.
+
+  L'utente preferisce autenticarsi esplicitamente per ogni `sudo`: il
+  popup zenity è il comportamento desiderato, non un fastidio da aggirare.
+
+  Stato attuale del setup:
+  - ✅ Script ~/.local/bin/zenity-askpass (era già presente)
+  - ✅ export SUDO_ASKPASS=... aggiunto a ~/.bashrc
+  - ⏸️ Memory globale ~/.Codex/AGENTS.md (in attesa di tua approvazione)
+
+## Skill e orchestrazione
+
+- Per sviluppo/refactor multi-step, audit e orchestrazione di sviluppo, consulta
+  `subagent-dev-with-codex` e segui i suoi criteri di applicazione. La skill e i
+  suoi riferimenti sono la fonte di verità per scelta/conferma di modelli ed
+  effort, audit del piano, review del codice, budget e criteri di arresto.
+  Non duplicare qui la procedura né recuperare da vecchie note limiti o modelli
+  che la contraddicono. Restano valide le istruzioni esplicite dell'utente e
+  i requisiti specifici del progetto.
+- Per worktree, terminali e agenti gestiti da Orca, consulta `orca-cli`; per lavori
+  con risultati attesi da worker Orca, consulta anche `orchestration`.
+- Le modifiche alle skill condivise di cleverOps devono essere completate anche
+  nel repository GitHub condiviso, seguendo `cleverops-maintainer`: una copia
+  locale aggiornata non equivale alla consegna. Segnala eventuali blocchi reali.
+
+## Pulizia a fine orchestrazione
+
+Regola di Gio Marco (06/11/2026), vale sul Legion e sulla twin: un'orchestrazione
+non è finita finché non è pulita.
+
+- A lavoro concluso l'orchestratore rimuove i worktree/workspace dei worker già
+  integrati (`orca worktree rm --worktree id:<…>`, che tiene i rami), chiude i
+  terminali e le sessioni rimaste, toglie i propri file temporanei (cartelle in
+  `/tmp`, cloni e istantanee di prova, rami di lavoro integrati quando è sicuro) e
+  lo scrive nel resoconto finale.
+- Prima di rimuovere: ramo integrato e nessuna modifica non salvata. Ciò che non
+  è integrato o ha modifiche non si cancella: va in un elenco da decidere con
+  Gio Marco.
+- Sui server dei clienti restano le regole del progetto (per esempio
+  `ok manifest`); mai toccare il lavoro di altri (Stefano, orchestratori ancora
+  attivi).
+- Chi avvia un orchestratore mette la pulizia come ultimo passo del brief.
+
+## Memoria condivisa: GBrain
+
+GBrain è la memoria condivisa di Gio Marco, consultata da Claude Code e Codex su Legion e twin-akkaz, claude.ai e ChatGPT. Usa il server MCP `gbrain`, preferendolo al connettore equivalente quando sono disponibili entrambi. Policy del proprietario aggiornata il 2026-11-01; prevale sulle indicazioni generiche di salvataggio automatico. Dettagli: `preferenze/gbrain-organizzazione-e-provenienza`; catalogo delle categorie: `preferenze/gbrain-categorie`.
+
+- Prima di lavorare cerca il cliente/progetto/macchina pertinente (`query` per domande, `search` per nomi; prova varianti). Per i fatti usa `recall` con l'entità corretta. Non interpretare l'assenza dal contesto automatico come assenza dal brain: la memoria tecnica si recupera esplicitamente per il progetto.
+- Distingui SEMPRE il soggetto della memoria, chi ha espresso l'affermazione e chi ha redatto la nota. Scrivere una nota per Gio Marco non rende Gio Marco autore di tutte le scelte. Una decisione è sua solo se dichiarata o accettata esplicitamente; una proposta o osservazione dell'assistente resta tale. Documenti e clienti sono fonti distinte. Non dedurre preferenze dal lavoro autonomo dei worker.
+- Ambiti e percorsi: `preferenze/` e `personale/` per preferenze, obiettivi e profilo; `clienti/<cliente>` per accordi, priorità e decisioni del cliente; `progetti/<nome>` per contesto e direzione del progetto; `infra/<host>` per vincoli stabili della macchina; `tecnica/<cliente-o-progetto>/<tema>` per lezioni tecniche durevoli. Didattica resta distinta dalla vita personale. Le decisioni datate possono mantenere `decisioni/`, indicando cliente/progetto. Mantieni slug e link esistenti salvo migrazione esplicita.
+- Distingui anche la relazione: `relazione-cliente` per lavoro commissionato e `relazione-personale` per iniziative proprie; aggiungi `cliente-<nome>` e `progetto-<nome>` quando noti. Una lezione tecnica su un cliente resta tecnica, collegata a quel cliente; non diventa una memoria personale. Se la relazione non è nota, non inventarla.
+- Aggiungi tag `ambito-personale`, `ambito-clienti`, `ambito-progetti`, `ambito-didattica`, `ambito-infrastruttura`, `ambito-tecnica` oppure `ambito-operativo`; se incerto `ambito-da-classificare`. Per il documento usa `origine-utente`, `origine-cliente`, `origine-agente`, `origine-mista`, `origine-sintesi-automatica` o `origine-non-determinata`. Il tag della pagina non sostituisce l'attribuzione delle singole affermazioni.
+- Salva selettivamente decisioni, impegni, preferenze e fatti durevoli che cambieranno una decisione futura. Per `remember`, una sola affermazione, soggetto `entity`, provenienza con autore dell'affermazione + strumento/macchina/data + evidenza. Usa `content_origin:user_said` SOLO per ciò che Gio Marco ha detto in questa conversazione; `tool_output` per documenti/file/strumenti; `inferred` per una tua sintesi o inferenza. Non inventare parametri di attribuzione non esposti dal tool: scrivi nel testo «L'agente ha osservato/proposto…» quando necessario. `world` indica gli agenti autorizzati di questo brain, non internet.
+- Sessioni autonome: i worker non salvano cronache o risultati intermedi in GBrain. L'orchestratore consolida al massimo le poche lezioni durevoli non già documentate nel repo, in `tecnica/`, con causa, soluzione, limiti e rimando alla fonte. Evita `remember` per questi resoconti: la pagina tecnica è la fonte canonica. Le pagine scritte da sessioni autonome o da worker (`tecnica/`, resoconti, lezioni) portano `facts_backstop: false` nel frontmatter, così l'estrazione automatica non ne ricava fatti attribuiti a Gio Marco. Non promuovere a preferenze personali le scelte di modelli, comandi, test o procedure fatte dagli agenti.
+- Log, SHA, conteggi dei test, turni dei worker, stato dei rilasci e attività temporanee restano nei resoconti del progetto. Gli eventuali documenti storici già presenti sono `ambito-operativo`, non prova dello stato attuale. Un rischio ancora aperto resta visibile nella scheda progetto con rimando tecnico e data; non nasconderlo durante il riordino.
+- Una pagina per argomento. Prima di modificarla leggila integralmente con `get_page(include_content:true)` e usa `expected_revision`; preserva timeline e tabelle dei fatti. Non cancellare o riscrivere la storia per correggere l'attribuzione. Origine, affidabilità e autorizzazione sono cose diverse: non cambiare trust, visibilità, grant o token per risolvere un problema di categorie.
+- Mai salvare credenziali, dati personali di terzi, trascrizioni integrali, output grezzi degli strumenti o copie di informazioni già nel codice/git. Una sintesi automatica è una fonte derivata: non va riassunta ed estratta ripetutamente come nuova evidenza indipendente.
+- Wiki: https://gbrain.akkaz.dev (login). A fine risposta, solo quando hai effettivamente scritto: «Salvato in GBrain: <pagina>». Non trasformare una discussione ancora aperta in una decisione confermata.
+</INSTRUCTIONS>
