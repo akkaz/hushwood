@@ -6,21 +6,22 @@
 
 An open-source classroom game for teachers and their students. A microphone-controlled forest companion reacts to the room, earns XP and evolves. Try it without an account; sign in to organize classes, invite colleagues and run a school cup. Audio is processed locally and never uploaded. Available in English, Italian, French, German, Spanish and Portuguese.
 
-Demo: publication pending verification.
-Source: publication pending verification.
+Demo: https://hushwood.akkaz.chatgpt.site
+Source: https://github.com/akkaz/hushwood
 Teaser: `public/media/hushwood-teaser.mp4`.
 
 ## How I spent my ten
 
 1. Original project brief: build an open-source classroom microphone game, public demo, school accounts/cup, languages, deployment, teaser, Chrome verification and Astra review. Exact attachment: [original-brief.txt](history/original-brief.txt). This attempt began the Hushwood repository; it did not finish delivery.
-2. Follow-up: the full brief was attached again, with: “Forse conviene pubblicare e usare il DB di chatgpt sites che ho incluso nel mio piano, valuta tu, fai la scelta secondo te piu senzata”. Exact attachment: [brief.txt](history/brief.txt). This directed the hosting/database evaluation and completion.
+2. The brief was submitted again in a separate Codex conversation, which created the initial application scaffold and Mongo/Vercel backend. Exact prompt: [prompt-02.txt](history/prompt-02.txt). This separate attempt counts under the event rules even though the brief was substantially repeated.
+3. Follow-up: the full brief was attached again, with: “Forse conviene pubblicare e usare il DB di chatgpt sites che ho incluso nel mio piano, valuta tu, fai la scelta secondo te piu senzata”. Exact attachment: [brief.txt](history/brief.txt). This directed the hosting/database evaluation and completion.
 
 The machine history also contains goal-control pause/automatic continuation messages and injected AGENTS.md instructions. These are disclosed, not silently counted as new feature prompts or hidden. The organizer decides how goal controls are counted under the rules. The submission must not advertise a one-prompt build. Built-in subagent work and automatic tool use are retained in the original session history.
 
 ## Build notes
 
 - Client: Codex, local Linux workspace.
-- Models: parent session model as recorded by the client; development agents inherit it; independent plan/final review explicitly requested as `gpt-6-astra`, high effort. Exact effective metadata belongs to the preserved sessions.
+- Models: parent and full-context development/review agents recorded `gpt-6-astra`, medium effort in session metadata. A high-effort override was requested for the auditor but inherited full-context settings prevailed. The Astra review was a separate agent, not a cross-model review.
 - Started with an empty project folder and standard React/Vite libraries. Earlier Decibel concept by the author inspired the classroom idea; no older app code imported.
 - Hosting choice made by the agent under the user's delegation: ChatGPT Sites, Cloudflare Worker + D1, platform sign-in. Initial Mongo/Vercel backend was replaced, with no production school database accessed or reused.
 - Skills/instructions: user AGENTS.md, Sites, subagent-dev-with-codex, plan-auditor, Impeccable. The repository includes the specific brief and design decisions. Skills are disclosed as build assistance, not authored product code.
@@ -33,10 +34,10 @@ Keep both original Codex conversations and their subagents until judging ends. P
 
 ## Required delivery evidence
 
-- [ ] Public deployment and URL
-- [ ] Public source version
+- [x] Public deployment and URL
+- [x] Public source version
 - [ ] Chrome deployed anonymous + authenticated paths
-- [ ] Persistent D1 scoring and isolation tests
-- [ ] Teaser MP4
-- [ ] Astra final review and chosen improvements
+- [x] D1 schema deployed; local persistent scoring and isolation tests (hosted signed-in flow still pending)
+- [x] Teaser MP4
+- [x] Astra final review and chosen improvements
 - [ ] Full readable conversation history, reviewed redactions

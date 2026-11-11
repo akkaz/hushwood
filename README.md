@@ -1,5 +1,7 @@
 # Hushwood
 
+[Play Hushwood](https://hushwood.akkaz.chatgpt.site) · [Watch the teaser](https://hushwood.akkaz.chatgpt.site/media/hushwood-teaser.mp4)
+
 A small sound adventure for a whole classroom. Keep a forest companion comfortable, build a quiet streak, and grow together.
 
 **Public game:** use a microphone with no account. Audio stays on the device. A simulation lets you try the mechanics without granting microphone access.

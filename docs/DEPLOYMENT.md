@@ -17,3 +17,11 @@ The source manifest `.openai/hosting.json` declares D1 binding `DB`. SQL migrati
 Publish through the Sites skill source workflow: push the exact source commit, package it, save a version, deploy that version, and verify the returned deployment state. The native Sites project is public so the landing and microphone game work anonymously. API school operations require authenticated membership. A custom hostname must be verified via the Sites custom-domain tool and DNS before it is advertised as live.
 
 Open-source reuse: create your own Site and replace the project ID through the supported helper. Do not deploy against the original project identity. Alternatively adapt the identity boundary to your own trusted provider, and bind your own D1 database.
+
+## Friendly domain
+
+`hushwood.akkaz.dev` is a Vercel redirect entry point; the application, authentication and database remain at `hushwood.akkaz.chatgpt.site`. The existing Cloudflare wildcard DNS already routes to Vercel. The current CLI identity does not grant Cloudflare DNS edits, so no nameserver or existing DNS record was changed. The temporary non-authoritative Vercel DNS records were removed, and the unused pending Sites custom-hostname registration was removed.
+
+Redirect source is `deployment/domain-entry/`. Deploy that folder as the separate `hushwood-entry` Vercel project, then add the custom hostname to that project. Do not deploy the application root to Vercel: its managed database and sign-in belong to Sites.
+
+The entry uses the Vercel Build Output API to make its HTTP redirect explicit. From `deployment/domain-entry/`, run `node build.mjs`, link the existing `hushwood-entry` project, then `vercel deploy --prebuilt --prod`. The HTML also contains a fallback navigation link.
